@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dluvxs8fw301m"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(183, 165)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2(45, -108)
+polygon = PackedVector2Array(-3, 2, 78, 2, 77, 53, 133, 59, 117, 97, 72, 95, 52, 144, -6, 136, 23, 93, -31, 84, 26, 56, -24, 28)
