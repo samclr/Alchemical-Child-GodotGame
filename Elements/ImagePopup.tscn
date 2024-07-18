@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjhnquch43kci"]
+
+[ext_resource type="Script" path="res://Scripts/ImagePopup.gd" id="1_jg171"]
+[ext_resource type="Texture2D" uid="uid://baooyykea3n4h" path="res://Elements/derek.jpg" id="2_aa5dq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jg171")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 1151.0
+texture = ExtResource("2_aa5dq")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1238.0
+offset_top = 32.0
+offset_right = 1549.0
+offset_bottom = 304.0
+text = "CLOSE"
