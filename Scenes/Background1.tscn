@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dde62nvmkj2r3"]
 
-[ext_resource type="PackedScene" path="res://Elements/Player.tscn" id="1_sexvx"]
+[ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="1_sexvx"]
 
 [node name="Background1" type="Node2D"]
 
