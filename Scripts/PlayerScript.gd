@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
-const speed = 100
+const speed = 300
 
 var current_dir = 'none'
+
+func Player():
+	# a function that only the player has so we can identify it with ( if body.has_method('Player'): )
+	pass
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -32,6 +36,5 @@ func player_movement(delta):
 		velocity.y = 0
 	
 	move_and_slide()
-
 
 

@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="Learning Godot"
-run/main_scene="res://Scenes/Background1.tscn"
+run/main_scene="res://Scenes/witch_hut.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="res://Elements/npcs/runningNPC.tscn"
+
+[autoload]
+
+global="*res://Scripts/global.gd"
 
 [input]
 
