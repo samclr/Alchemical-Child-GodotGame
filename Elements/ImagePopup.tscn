@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjhnquch43kci"]
+[gd_scene load_steps=3 format=3 uid="uid://mjyshe8gimu1"]
 
 [ext_resource type="Script" path="res://Scripts/ImagePopup.gd" id="1_jg171"]
-[ext_resource type="Texture2D" uid="uid://baooyykea3n4h" path="res://Elements/derek.jpg" id="2_aa5dq"]
+[ext_resource type="Texture2D" path="res://Elements/derek.jpg" id="2_aa5dq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
