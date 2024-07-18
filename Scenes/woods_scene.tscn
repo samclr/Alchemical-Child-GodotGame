@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv4xgnbq6dmm1"]
+[gd_scene load_steps=5 format=3 uid="uid://bv4xgnbq6dmm1"]
 
 [ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="1_6sonu"]
 [ext_resource type="Script" path="res://Scenes/woods_scene_script.gd" id="1_q0xkb"]
+[ext_resource type="PackedScene" uid="uid://dwqb4ke3j22bv" path="res://Elements/npcs/runningNPC.tscn" id="3_kexi2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o0ui"]
 size = Vector2(146, 54)
@@ -14,7 +15,7 @@ color = Color(0.445271, 0.558744, 0.391258, 1)
 polygon = PackedVector2Array(0, 0, 2000, 0, 2000, 1500, 0, 1500)
 
 [node name="Player" parent="." instance=ExtResource("1_6sonu")]
-position = Vector2(250, 333)
+position = Vector2(247, 358)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
@@ -45,5 +46,14 @@ polygon = PackedVector2Array(97, 29, 97, 325, 182, 325, 182, 266, 316, 266, 316,
 position = Vector2(249, 281)
 shape = SubResource("RectangleShape2D_4o0ui")
 debug_color = Color(1, 1, 1, 0.42)
+
+[node name="RunningNPC" parent="." instance=ExtResource("3_kexi2")]
+position = Vector2(101, 631)
+rotation = 3.14159
+node_id = "Deerbyhouse"
+
+[node name="RunningNpc" parent="." instance=ExtResource("3_kexi2")]
+position = Vector2(356, 807)
+node_id = "human"
 
 [connection signal="body_entered" from="Woods_to_Witch_Transition" to="." method="_on_woods_to_witch_transition_body_entered"]

@@ -11,6 +11,9 @@ var player_start_witchhut_y = 364
 var player_exit_witchhut_x = 430
 var player_exit_witchhut_y = 377
 
+#tracks nodes/npcs that have been removed so we dont respawn them
+var removed_nodes = {}
+
 
 # needs changes when we have more then 2 scenes
 func finish_changingScene():

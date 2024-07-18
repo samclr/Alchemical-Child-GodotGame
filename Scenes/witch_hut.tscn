@@ -32,7 +32,7 @@ polygon = PackedVector2Array(363, 393, 363, 375, 497, 375, 497, 393)
 polygon = PackedVector2Array(278, 95, 278, 394, 364, 394, 363, 495, 499, 495, 497, 392, 605, 392, 605, 539, 902, 539, 902, 97, 279, 97, 279, 94, 912, 94, 912, 545, 250, 545, 264, 95)
 
 [node name="Player" parent="." instance=ExtResource("1_2l5kk")]
-position = Vector2(758, 364)
+position = Vector2(633, 323)
 
 [node name="BlackCovering at Door" type="Polygon2D" parent="."]
 color = Color(0.054902, 0.0627451, 0.0784314, 1)
