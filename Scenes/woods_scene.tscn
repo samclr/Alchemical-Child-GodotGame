@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv4xgnbq6dmm1"]
+[gd_scene load_steps=6 format=3 uid="uid://bv4xgnbq6dmm1"]
 
 [ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="1_6sonu"]
 [ext_resource type="Script" path="res://Scenes/woods_scene_script.gd" id="1_q0xkb"]
 [ext_resource type="PackedScene" uid="uid://dwqb4ke3j22bv" path="res://Elements/npcs/runningNPC.tscn" id="3_kexi2"]
+[ext_resource type="Texture2D" uid="uid://cer138u3f5mcf" path="res://Scenes/WitchHut/WitchHutRoof1.png" id="4_7cky2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o0ui"]
 size = Vector2(146, 54)
@@ -13,21 +14,6 @@ script = ExtResource("1_q0xkb")
 [node name="temporary_grass" type="Polygon2D" parent="."]
 color = Color(0.445271, 0.558744, 0.391258, 1)
 polygon = PackedVector2Array(0, 0, 2000, 0, 2000, 1500, 0, 1500)
-
-[node name="Witch_Hut_Collision" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Witch_Hut_Collision"]
-polygon = PackedVector2Array(97, 29, 97, 325, 182, 325, 182, 266, 316, 266, 316, 325, 422, 325, 422, 471, 720, 471, 720, 29)
-
-[node name="Witch_Hut" type="Polygon2D" parent="."]
-position = Vector2(-182, -68)
-color = Color(0.2, 0.14902, 0.054902, 1)
-polygon = PackedVector2Array(279, 97, 902, 97, 902, 539, 604, 539, 604, 393, 279, 393)
-
-[node name="DoorHighlight" type="Polygon2D" parent="."]
-position = Vector2(-181, -68)
-color = Color(0.394025, 0.310095, 0.0818731, 1)
-polygon = PackedVector2Array(363, 393, 363, 375, 497, 375, 497, 393)
 
 [node name="Player" parent="." instance=ExtResource("1_6sonu")]
 position = Vector2(247, 358)
@@ -40,13 +26,6 @@ limit_top = 0
 limit_right = 2000
 limit_bottom = 1500
 
-[node name="Woods_to_Witch_Transition" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Woods_to_Witch_Transition"]
-position = Vector2(249, 281)
-shape = SubResource("RectangleShape2D_4o0ui")
-debug_color = Color(1, 1, 1, 0.42)
-
 [node name="RunningNPC" parent="." instance=ExtResource("3_kexi2")]
 position = Vector2(101, 631)
 rotation = 3.14159
@@ -55,5 +34,27 @@ node_id = "Deerbyhouse"
 [node name="RunningNpc" parent="." instance=ExtResource("3_kexi2")]
 position = Vector2(356, 807)
 node_id = "human"
+
+[node name="WitchHutRoof" type="Sprite2D" parent="."]
+position = Vector2(-23, 267)
+scale = Vector2(5.85092, 4.19587)
+
+[node name="WitchHutRoof1" type="Sprite2D" parent="."]
+position = Vector2(412, 228)
+scale = Vector2(6.01429, 4.23611)
+texture = ExtResource("4_7cky2")
+
+[node name="Witch_Hut_Collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Witch_Hut_Collision"]
+position = Vector2(6, -15)
+polygon = PackedVector2Array(91, 16, 98, 340, 191, 339, 192, 265, 286, 265, 290, 339, 384, 340, 385, 472, 722, 471, 721, 15)
+
+[node name="Woods_to_Witch_Transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Woods_to_Witch_Transition"]
+position = Vector2(249, 281)
+shape = SubResource("RectangleShape2D_4o0ui")
+debug_color = Color(1, 1, 1, 0.42)
 
 [connection signal="body_entered" from="Woods_to_Witch_Transition" to="." method="_on_woods_to_witch_transition_body_entered"]
