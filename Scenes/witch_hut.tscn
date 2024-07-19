@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://lvb3tfo8pa40"]
+
+[ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="1_2l5kk"]
+[ext_resource type="Script" path="res://Scenes/witch_hut_script.gd" id="1_f5dmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6ibk"]
+size = Vector2(135, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgay"]
+size = Vector2(245.5, 108.5)
+
+[node name="WitchHut Scene" type="Node2D"]
+script = ExtResource("1_f5dmp")
+
+[node name="Black Background" type="Polygon2D" parent="."]
+position = Vector2(51, 12)
+scale = Vector2(11.57, 6.38)
+color = Color(0.0555622, 0.0654464, 0.0814065, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="HutFloor" type="Polygon2D" parent="."]
+color = Color(0.198418, 0.150946, 0.0537691, 1)
+polygon = PackedVector2Array(279, 97, 902, 97, 902, 539, 604, 539, 604, 393, 279, 393)
+
+[node name="DoorHighlight" type="Polygon2D" parent="HutFloor"]
+color = Color(0.394025, 0.310095, 0.0818731, 1)
+polygon = PackedVector2Array(363, 393, 363, 375, 497, 375, 497, 393)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(278, 95, 278, 394, 364, 394, 363, 495, 499, 495, 497, 392, 605, 392, 605, 539, 902, 539, 902, 97, 279, 97, 279, 94, 912, 94, 912, 545, 250, 545, 264, 95)
+
+[node name="Player" parent="." instance=ExtResource("1_2l5kk")]
+position = Vector2(633, 323)
+
+[node name="BlackCovering at Door" type="Polygon2D" parent="."]
+color = Color(0.054902, 0.0627451, 0.0784314, 1)
+polygon = PackedVector2Array(364, 393, 363, 495, 499, 495, 497, 393)
+
+[node name="Door_Transition" type="Area2D" parent="."]
+position = Vector2(430, 445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Transition"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_y6ibk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(591, 319)
+zoom = Vector2(1.2, 1.2)
+
+[node name="Bed" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Bed"]
+position = Vector2(-7, -16)
+color = Color(0.371817, 5.62528e-07, 9.62615e-08, 1)
+polygon = PackedVector2Array(634, 426, 634, 534, 840, 534, 840, 426)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Bed"]
+position = Vector2(-7, -16)
+polygon = PackedVector2Array(840, 426, 879, 426, 879, 534, 840, 534)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
+position = Vector2(749.25, 463.75)
+shape = SubResource("RectangleShape2D_nlgay")
+debug_color = Color(0, 0, 0.47451, 0.419608)
+
+[connection signal="body_entered" from="Door_Transition" to="." method="_on_door_transition_body_entered"]
