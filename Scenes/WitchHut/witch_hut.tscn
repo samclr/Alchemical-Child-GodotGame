@@ -1,16 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dde62nvmkj2r3"]
+[gd_scene load_steps=6 format=3 uid="uid://dde62nvmkj2r3"]
 
-[ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="1_2l5kk"]
-[ext_resource type="Script" path="res://Scenes/witch_hut_script.gd" id="1_f5dmp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6ibk"]
-size = Vector2(135, 74)
+[ext_resource type="Script" path="res://Scenes/WitchHut/witch_hut_script.gd" id="1_84mvk"]
+[ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="2_5accp"]
+[ext_resource type="Texture2D" uid="uid://ejcuah3m7mad" path="res://Scenes/WitchHut/WitchHut.png" id="2_myjbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgay"]
 size = Vector2(245.5, 108.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6ibk"]
+size = Vector2(135, 74)
+
 [node name="WitchHut Scene" type="Node2D"]
-script = ExtResource("1_f5dmp")
+script = ExtResource("1_84mvk")
 
 [node name="Black Background" type="Polygon2D" parent="."]
 position = Vector2(51, 12)
@@ -31,23 +32,9 @@ polygon = PackedVector2Array(363, 393, 363, 375, 497, 375, 497, 393)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(278, 95, 278, 394, 364, 394, 363, 495, 499, 495, 497, 392, 605, 392, 605, 539, 902, 539, 902, 97, 279, 97, 279, 94, 912, 94, 912, 545, 250, 545, 264, 95)
 
-[node name="Player" parent="." instance=ExtResource("1_2l5kk")]
-position = Vector2(633, 323)
-
 [node name="BlackCovering at Door" type="Polygon2D" parent="."]
 color = Color(0.054902, 0.0627451, 0.0784314, 1)
 polygon = PackedVector2Array(364, 393, 363, 495, 499, 495, 497, 393)
-
-[node name="Door_Transition" type="Area2D" parent="."]
-position = Vector2(430, 445)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Transition"]
-position = Vector2(0, 14)
-shape = SubResource("RectangleShape2D_y6ibk")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(591, 319)
-zoom = Vector2(1.2, 1.2)
 
 [node name="Bed" type="StaticBody2D" parent="."]
 
@@ -64,5 +51,36 @@ polygon = PackedVector2Array(840, 426, 879, 426, 879, 534, 840, 534)
 position = Vector2(749.25, 463.75)
 shape = SubResource("RectangleShape2D_nlgay")
 debug_color = Color(0, 0, 0.47451, 0.419608)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+polygon = PackedVector2Array(-2076, -335, 78, -319, 337, 1163, -1996, 1157)
+
+[node name="WitchHut" type="Sprite2D" parent="."]
+position = Vector2(-756, 400)
+scale = Vector2(5, 5)
+texture = ExtResource("2_myjbw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-735, 411)
+zoom = Vector2(1.8, 1.8)
+
+[node name="Player" parent="." instance=ExtResource("2_5accp")]
+position = Vector2(-893, 465)
+
+[node name="Door_Transition" type="Area2D" parent="."]
+position = Vector2(-895, 551)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Transition"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_y6ibk")
+
+[node name="Walls2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls2"]
+polygon = PackedVector2Array(-996, 482, -936, 482, -936, 527, -963, 527, -963, 603, -826, 603, -826, 526, -855, 526, -854, 483, -756, 483, -756, 642, -516, 642, -516, 277, -677, 277, -677, 243, -996, 243, -996, 480, -1022, 480, -1022, 231, -492, 230, -497, 660, -774, 660, -994, 661)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls2"]
+polygon = PackedVector2Array(-731, 507, -736, 513, -736, 628, -536, 627, -536, 507)
 
 [connection signal="body_entered" from="Door_Transition" to="." method="_on_door_transition_body_entered"]

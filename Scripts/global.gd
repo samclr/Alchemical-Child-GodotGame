@@ -6,10 +6,10 @@ var transition_scene = false
 var game_first_loadin = true #helps with player location on first run of game
 
 #cords for player when entering and exiting the witch hut
-var player_start_witchhut_x = 758
-var player_start_witchhut_y = 364
-var player_exit_witchhut_x = 430
-var player_exit_witchhut_y = 377
+var player_start_witchhut_x = -643
+var player_start_witchhut_y = 467
+var player_exit_witchhut_x = -893
+var player_exit_witchhut_y = 465
 
 #tracks nodes/npcs that have been removed so we dont respawn them
 var removed_nodes = {}

@@ -22,5 +22,5 @@ func _on_woods_to_witch_transition_body_entered(body):
 func change_scene():
 	if global.transition_scene == true:
 		if global.current_scene == 'woods':
-			get_tree().change_scene_to_file("res://Scenes/witch_hut.tscn") # changes scene to witch hut
+			get_tree().change_scene_to_file("res://Scenes/WitchHut/witch_hut.tscn") # changes scene to witch hut
 			global.finish_changingScene() #triggers function in global script to clean up transition
