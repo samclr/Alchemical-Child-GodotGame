@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dde62nvmkj2r3"]
 
 [ext_resource type="Script" path="res://Scenes/WitchHut/witch_hut_script.gd" id="1_84mvk"]
-[ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="2_5accp"]
 [ext_resource type="Texture2D" uid="uid://ejcuah3m7mad" path="res://Scenes/WitchHut/WitchHut.png" id="2_myjbw"]
+[ext_resource type="PackedScene" uid="uid://crs0r2um5c0bd" path="res://Elements/Witch_Player/witch_player.tscn" id="4_bkjue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgay"]
 size = Vector2(245.5, 108.5)
@@ -56,17 +56,9 @@ debug_color = Color(0, 0, 0.47451, 0.419608)
 color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 polygon = PackedVector2Array(-2076, -335, 78, -319, 337, 1163, -1996, 1157)
 
-[node name="WitchHut" type="Sprite2D" parent="."]
-position = Vector2(-756, 400)
-scale = Vector2(5, 5)
-texture = ExtResource("2_myjbw")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-735, 411)
 zoom = Vector2(1.8, 1.8)
-
-[node name="Player" parent="." instance=ExtResource("2_5accp")]
-position = Vector2(-893, 465)
 
 [node name="Door_Transition" type="Area2D" parent="."]
 position = Vector2(-895, 551)
@@ -82,5 +74,13 @@ polygon = PackedVector2Array(-996, 482, -936, 482, -936, 527, -963, 527, -963, 6
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls2"]
 polygon = PackedVector2Array(-731, 507, -736, 513, -736, 628, -536, 627, -536, 507)
+
+[node name="WitchHut" type="Sprite2D" parent="."]
+position = Vector2(-756, 400)
+scale = Vector2(5, 5)
+texture = ExtResource("2_myjbw")
+
+[node name="WitchPlayer" parent="." instance=ExtResource("4_bkjue")]
+position = Vector2(-633, 459)
 
 [connection signal="body_entered" from="Door_Transition" to="." method="_on_door_transition_body_entered"]

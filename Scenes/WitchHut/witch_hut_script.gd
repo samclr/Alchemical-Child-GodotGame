@@ -5,11 +5,11 @@ extends Node2D
 func _ready():
 	#for player spawning on scene start and entering
 	if global.game_first_loadin == true:
-		$Player.position.x = global.player_start_witchhut_x
-		$Player.position.y = global.player_start_witchhut_y
+		$WitchPlayer.position.x = global.player_start_witchhut_x
+		$WitchPlayer.position.y = global.player_start_witchhut_y
 	else:
-		$Player.position.x = global.player_exit_witchhut_x 
-		$Player.position.y = global.player_exit_witchhut_y
+		$WitchPlayer.position.x = global.player_exit_witchhut_x 
+		$WitchPlayer.position.y = global.player_exit_witchhut_y
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

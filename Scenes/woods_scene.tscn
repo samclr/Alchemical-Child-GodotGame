@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv4xgnbq6dmm1"]
 
-[ext_resource type="PackedScene" uid="uid://ffqb4d60gtpv" path="res://Elements/Player.tscn" id="1_6sonu"]
 [ext_resource type="Script" path="res://Scenes/woods_scene_script.gd" id="1_q0xkb"]
+[ext_resource type="PackedScene" uid="uid://crs0r2um5c0bd" path="res://Elements/Witch_Player/witch_player.tscn" id="3_cyout"]
 [ext_resource type="PackedScene" uid="uid://dwqb4ke3j22bv" path="res://Elements/npcs/runningNPC.tscn" id="3_kexi2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o0ui"]
@@ -29,17 +29,6 @@ position = Vector2(-181, -68)
 color = Color(0.394025, 0.310095, 0.0818731, 1)
 polygon = PackedVector2Array(363, 393, 363, 375, 497, 375, 497, 393)
 
-[node name="Player" parent="." instance=ExtResource("1_6sonu")]
-position = Vector2(247, 358)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
-zoom = Vector2(1.2, 1.2)
-limit_left = 0
-limit_top = 0
-limit_right = 2000
-limit_bottom = 1500
-
 [node name="Woods_to_Witch_Transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Woods_to_Witch_Transition"]
@@ -55,5 +44,18 @@ node_id = "Deerbyhouse"
 [node name="RunningNpc" parent="." instance=ExtResource("3_kexi2")]
 position = Vector2(356, 807)
 node_id = "human"
+
+[node name="WitchPlayer" parent="." instance=ExtResource("3_cyout")]
+position = Vector2(249, 363)
+
+[node name="Camera2D" type="Camera2D" parent="WitchPlayer"]
+visible = false
+position = Vector2(19.1429, -25.4286)
+scale = Vector2(0.285714, 0.285714)
+zoom = Vector2(1.8, 1.8)
+limit_left = 0
+limit_top = 0
+limit_right = 2000
+limit_bottom = 1500
 
 [connection signal="body_entered" from="Woods_to_Witch_Transition" to="." method="_on_woods_to_witch_transition_body_entered"]
