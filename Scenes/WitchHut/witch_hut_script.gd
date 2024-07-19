@@ -20,7 +20,7 @@ func _process(delta):
 func change_scene():
 	if global.transition_scene == true:
 		if global.current_scene == 'witch_hut':
-			get_tree().change_scene_to_file("res://Scenes/woods_scene.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Woods/woods_scene.tscn")
 			global.game_first_loadin = false #sets first loadin to false so when you reenter you go in the door
 			global.finish_changingScene() #starts the function to clean up switching scnenes in the global script
 
