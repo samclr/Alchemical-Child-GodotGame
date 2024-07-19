@@ -12,7 +12,7 @@ point_count = 7
 size = Vector2(281.25, 165)
 
 [node name="RunningNpc" type="Node2D"]
-position = Vector2(80, 75)
+position = Vector2(399, 150)
 script = ExtResource("1_wku3q")
 
 [node name="Path2D" type="Path2D" parent="."]
