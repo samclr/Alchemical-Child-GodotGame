@@ -15,6 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	change_scene() 
+	letter_checking()
 
 
 func change_scene():
@@ -31,3 +32,20 @@ func _on_door_transition_body_entered(body):
 		global.transition_scene = true #tells change_scene() function its time to change
 		
 
+func _on_letter_contact_range_body_entered(body):
+	if body.has_method('Player'):
+		global.in_letter_range = true
+	
+
+
+func _on_letter_contact_range_body_exited(body):
+	if body.has_method('Player'):
+		global.in_letter_range = false
+
+func letter_checking():
+	if global.in_letter_range == true:
+		if Input.is_action_just_pressed("ui_open"):
+			global.letter_opened = true
+			print('global.letter_opened = true')
+			
+		

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mjyshe8gimu1"]
+[gd_scene load_steps=4 format=3 uid="uid://mjyshe8gimu1"]
 
 [ext_resource type="Script" path="res://Scripts/ImagePopup.gd" id="1_8kvh1"]
 [ext_resource type="Texture2D" uid="uid://baooyykea3n4h" path="res://Elements/letter/derek.jpg" id="2_846qe"]
+[ext_resource type="Texture2D" uid="uid://blpoq13x5he7h" path="res://Elements/letter/CloseButton.png" id="3_fw56s"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,12 +15,15 @@ script = ExtResource("1_8kvh1")
 layout_mode = 0
 offset_right = 1600.0
 offset_bottom = 1151.0
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_846qe")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1238.0
-offset_top = 32.0
-offset_right = 1549.0
-offset_bottom = 304.0
-text = "CLOSE"
+offset_left = 276.0
+offset_right = 316.0
+offset_bottom = 39.0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("3_fw56s")
+icon_alignment = 1
+expand_icon = true

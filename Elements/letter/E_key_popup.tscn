@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8i53jbmob274"]
+
+[ext_resource type="Texture2D" uid="uid://dl3dg2xipa15x" path="res://Elements/letter/E_key.png" id="1_avlli"]
+[ext_resource type="Script" path="res://Elements/letter/E_key_popup.gd" id="1_bcetm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bcetm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_avlli")

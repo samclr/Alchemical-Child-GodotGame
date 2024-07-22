@@ -14,6 +14,8 @@ var player_exit_witchhut_y = 453
 #tracks nodes/npcs that have been removed so we dont respawn them
 var removed_nodes = {}
 
+var in_letter_range = false
+var letter_opened = false
 
 # needs changes when we have more then 2 scenes
 func finish_changingScene():

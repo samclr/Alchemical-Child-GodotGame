@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dde62nvmkj2r3"]
+[gd_scene load_steps=9 format=3 uid="uid://dde62nvmkj2r3"]
 
 [ext_resource type="Script" path="res://Scenes/WitchHut/witch_hut_script.gd" id="1_84mvk"]
 [ext_resource type="Texture2D" uid="uid://ejcuah3m7mad" path="res://Scenes/WitchHut/WitchHut.png" id="2_myjbw"]
 [ext_resource type="PackedScene" uid="uid://crs0r2um5c0bd" path="res://Elements/Witch_Player/witch_player.tscn" id="4_bkjue"]
+[ext_resource type="PackedScene" uid="uid://csmuiqb8544gj" path="res://Elements/letter/Letter_for_table.tscn" id="4_uq7mc"]
+[ext_resource type="PackedScene" uid="uid://mjyshe8gimu1" path="res://Elements/letter/ImagePopup.tscn" id="5_5a6h7"]
+[ext_resource type="PackedScene" uid="uid://b8i53jbmob274" path="res://Elements/letter/E_key_popup.tscn" id="6_alyt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgay"]
 size = Vector2(245.5, 108.5)
@@ -83,4 +86,29 @@ texture = ExtResource("2_myjbw")
 [node name="WitchPlayer" parent="." instance=ExtResource("4_bkjue")]
 position = Vector2(-896, 453)
 
+[node name="Letter" parent="." instance=ExtResource("4_uq7mc")]
+position = Vector2(-657, 253)
+scale = Vector2(0.6, 0.6)
+skew = 0.268781
+
+[node name="Letter_Contact_Range" type="Area2D" parent="Letter"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Letter/Letter_Contact_Range"]
+polygon = PackedVector2Array(-11.5468, -12.1012, -28.3831, -19.0161, -71.7164, -19.0161, -52.3854, 72.6069, 59.1116, 65.692, 41.7864, -12.1012)
+
+[node name="ImagePopup" parent="." instance=ExtResource("5_5a6h7")]
+offset_left = -886.0
+offset_top = 242.0
+offset_right = -558.0
+offset_bottom = 462.0
+
+[node name="Control" parent="." instance=ExtResource("6_alyt5")]
+offset_left = -650.0
+offset_top = 226.0
+offset_right = -650.0
+offset_bottom = 226.0
+scale = Vector2(0.5, 0.5)
+
 [connection signal="body_entered" from="Door_Transition" to="." method="_on_door_transition_body_entered"]
+[connection signal="body_entered" from="Letter/Letter_Contact_Range" to="." method="_on_letter_contact_range_body_entered"]
+[connection signal="body_exited" from="Letter/Letter_Contact_Range" to="." method="_on_letter_contact_range_body_exited"]
