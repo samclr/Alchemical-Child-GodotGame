@@ -65,6 +65,7 @@ position = Vector2(-735, 411)
 zoom = Vector2(1.8, 1.8)
 
 [node name="Door_Transition" type="Area2D" parent="."]
+visible = false
 position = Vector2(-895, 551)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Transition"]
@@ -85,7 +86,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_myjbw")
 
 [node name="WitchPlayer" parent="." instance=ExtResource("4_bkjue")]
-position = Vector2(-896, 453)
+position = Vector2(-550, 328)
 
 [node name="Letter" parent="." instance=ExtResource("4_uq7mc")]
 position = Vector2(-657, 253)
