@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ngexx1g1yn41"]
+[gd_scene load_steps=22 format=3 uid="uid://c3hnobogctyox"]
 
 [ext_resource type="Texture2D" uid="uid://u2xwk3m8g4lh" path="res://Elements/npcs/npc1-Sheet.png" id="1_c2r3m"]
 
@@ -156,6 +156,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ckym"]
+size = Vector2(14, 16)
+
 [node name="Npc1" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_g5onw")
-animation = &"back_walk"
+animation = &"front_idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6ckym")

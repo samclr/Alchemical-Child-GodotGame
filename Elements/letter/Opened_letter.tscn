@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqguos8t1x7id"]
+
+[ext_resource type="Script" path="res://Scripts/Opened_letter.gd" id="1_iyanx"]
+[ext_resource type="Texture2D" uid="uid://cwrahdc2660jr" path="res://Elements/letter/letter_enlarged.png" id="1_qat2h"]
+[ext_resource type="FontFile" uid="uid://dqcnu6ej0rwb" path="res://Elements/Font/pixel_font.png" id="2_2dque"]
+
+[node name="OpenedLetter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iyanx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qat2h")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -19.0
+offset_right = 14.0
+offset_bottom = 21.0
+scale = Vector2(1.36375, 1.36375)
+theme_override_fonts/normal_font = ExtResource("2_2dque")
+theme_override_font_sizes/normal_font_size = 3
+text = "Ellie,
+
+I feel quite sick today, could you bring me  some fruit
+
+-Grandma"

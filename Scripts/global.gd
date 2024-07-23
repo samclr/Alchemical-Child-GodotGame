@@ -4,6 +4,7 @@ var current_scene = 'witch_hut'
 var transition_scene = false
 
 var game_first_loadin = true #helps with player location on first run of game
+var first_time_leaving_hut = true
 
 #cords for player when entering and exiting the witch hut
 var player_start_witchhut_x = -643

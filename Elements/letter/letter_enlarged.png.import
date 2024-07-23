@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbc4dp6x2v7wh"
-path="res://.godot/imported/CloseButton.png-be5205db45c27b408c6322911b4db0d3.ctex"
+uid="uid://cwrahdc2660jr"
+path="res://.godot/imported/letter_enlarged.png-466f267561b95e4d5fc0068338c73988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elements/npcs/CloseButton.png"
-dest_files=["res://.godot/imported/CloseButton.png-be5205db45c27b408c6322911b4db0d3.ctex"]
+source_file="res://Elements/letter/letter_enlarged.png"
+dest_files=["res://.godot/imported/letter_enlarged.png-466f267561b95e4d5fc0068338c73988.ctex"]
 
 [params]
 

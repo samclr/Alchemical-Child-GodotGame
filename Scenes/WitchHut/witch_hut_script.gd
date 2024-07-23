@@ -1,6 +1,5 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#for player spawning on scene start and entering
@@ -24,6 +23,7 @@ func change_scene():
 			get_tree().change_scene_to_file("res://Scenes/Woods/woods_scene.tscn")
 			global.game_first_loadin = false #sets first loadin to false so when you reenter you go in the door
 			global.finish_changingScene() #starts the function to clean up switching scnenes in the global script
+		global.first_time_leaving_hut = false
 
 
 
