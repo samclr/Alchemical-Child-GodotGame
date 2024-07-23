@@ -24,3 +24,5 @@ func _process(delta):
 		show()
 	if global.first_time_leaving_hut == false:
 		hide()
+	if global.in_letter_range == false:
+		hide()
